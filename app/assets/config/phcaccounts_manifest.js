@@ -1,2 +1,2 @@
 //= link_directory ../javascripts/phcaccounts .js
-//= link_directory ../stylesheets/phcaccounts .css
+//= link_directory ../stylesheets/phcaccounts .scss
