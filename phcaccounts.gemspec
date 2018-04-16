@@ -53,6 +53,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'responders', '~> 2.4'
 
   # PHCTheme Dependencies
+  spec.add_dependency 'phcthemebasic', '~> 0.1.1'
   spec.add_dependency 'phctheme1', '~> 30.0'
   spec.add_dependency 'phctheme2', '~> 19.0'
 

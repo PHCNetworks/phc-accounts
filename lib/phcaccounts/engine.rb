@@ -9,6 +9,7 @@ module Phcaccounts
     require 'phcnotifi'
     require 'phctitleseo'
 
+    require 'phcthemebasic'
     require 'phctheme1'
     require 'phctheme2'
     require 'phcadmin1'

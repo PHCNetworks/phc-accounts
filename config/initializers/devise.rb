@@ -16,7 +16,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'no-reply@example.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -269,7 +269,7 @@ Devise.setup do |config|
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.
   #
-  #     mount MyEngine, at: '/my_engine'
+  #mount Phcaccounts, at: '/phcaccounts'
   #
   # The router that invoked `devise_for`, in the example above, would be:
   config.router_name = :phcaccounts
