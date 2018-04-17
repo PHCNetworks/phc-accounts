@@ -1,7 +1,7 @@
 Phcaccounts::Engine.routes.draw do
 
   # Dashboard (Engine Root)
-  root :to => 'modules/page#index'
+  #root :to => 'modules/page#index'
 
   # Add Devise routes
   devise_for :users, class_name: "Phcaccounts::User", module: :devise
