@@ -15,6 +15,7 @@ module Phcaccounts
     require 'phcadmin1'
     require 'phcadmin2'
     require 'phcadmin3'
+    require 'phcadmin4'
 
     # UI & Frontend Dependencies
     require 'country_select'

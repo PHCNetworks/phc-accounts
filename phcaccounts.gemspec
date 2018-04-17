@@ -61,6 +61,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'phcadmin1', '~> 24.0'
   spec.add_dependency 'phcadmin2', '~> 22.0'
   spec.add_dependency 'phcadmin3', '~> 19.0'
+  spec.add_dependency 'phcadmin4', '~> 0.1.0'
 
   # Security Dependencies
   spec.add_dependency 'devise', '~> 4.4', '>= 4.4.3'
