@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>PHCAccounts System</title>
-  <%= stylesheet_link_tag    "phcaccounts/application", media: "all" %>
-  <%= javascript_include_tag "phcaccounts/application" %>
+  <%= stylesheet_link_tag "phcaccounts/application", media: "all" %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-  <div class="container">
-    <%= yield %>
+
+  <!-- Main Container -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Main Container -->
+      <nav id="sidebar" class="px-0 bg-dark bg-gradient sidebar">
+        <%= render 'layouts/phcaccounts/components/nav_main' %>
+      </nav>
+      <!-- Main Container -->
+
+      <!-- Right Page Container -->
+      <div class="right-column">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <%= render 'layouts/phcaccounts/components/nav_top_bar' %>
+        </nav>
+        <main class="main-content p-5" role="main">
+          <%= yield %>
+        </main>
+      </div>
+      <!-- Right Page Container -->
+
+    </div>
   </div>
+  <!-- Main Container -->
+
+  <%= javascript_include_tag "phcaccounts/application" %>
+
 </body>
 </html>
