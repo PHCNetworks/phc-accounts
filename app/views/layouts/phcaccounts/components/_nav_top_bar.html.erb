@@ -1,6 +1,3 @@
-<a class="navbar-brand d-block d-sm-block d-md-block d-lg-none" href="#">
-  <img src="assets/img/logo-dark.png" width="145" height="32.3" alt="QuillPro">
-</a>
 <button class="hamburger hamburger--slider" type="button" data-target=".sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Sidebar">
   <span class="hamburger-box">
     <span class="hamburger-inner"></span>
@@ -34,7 +31,7 @@
 <!-- Main Topbar Container -->
 <div class="collapse navbar-collapse" id="navbar-header-content">
 
-  <!-- Language Container -->
+  <!-- Language Container
   <ul class="navbar-nav navbar-language-translation mr-auto">
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbar-dropdown-menu-link" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
@@ -48,7 +45,7 @@
       </ul>
     </li>
   </ul>
-  <!-- Language Container -->
+  Language Container -->
 
   <!-- Buttons Bar -->
   <ul class="navbar-nav navbar-notifications float-right">
@@ -198,22 +195,15 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbar-dropdown-navbar-profile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
           <div class="profile-name">
-            <%= current_user.first_name + ' ' + current_user.last_name %>
+            <%= current_user.firstname + ' ' + current_user.lastname  %>
           </div>
           <div class="profile-picture bg-gradient bg-primary has-message float-right">
-            <img src="assets/img/profile-pic.jpg" width="44" height="44">
+            <%= image_tag current_user.gravatar_url, height:"44", width:"44" %>
           </div>
         </a>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown-navbar-profile">
-          <li><a class="dropdown-item" href="profiles-member-profile.html">Profile</a></li>
-          <li>
-            <a class="dropdown-item" href="mail-inbox.html">
-              Messages
-              <span class="badge badge-danger badge-pill float-right">3</span>
-            </a>
-          </li>
-          <li><a class="dropdown-item" href="profiles-member-profile.html">Settings</a></li>
-          <li><a class="dropdown-item" href="sisu-lock-screen.html">Logout</a></li>
+          <li><%= link_to('Settings', phcaccounts.edit_user_registration_path) %></li>
+          <li><%= link_to('Logout', phcaccounts.destroy_user_session_path, method: :delete) %></li>
         </ul>
       </li>
     </ul>

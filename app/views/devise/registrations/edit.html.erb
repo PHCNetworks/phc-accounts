@@ -8,8 +8,23 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
+        <%= f.label :username %>
+        <%= f.text_field :username, autocomplete: "Username", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :firstname %>
+        <%= f.text_field :firstname, autocomplete: "First Name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :lastname %>
+        <%= f.text_field :lastname, autocomplete: "Last Name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email", class: "form-control" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
