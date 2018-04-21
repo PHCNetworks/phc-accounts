@@ -9,23 +9,17 @@
 </head>
 <body>
 
+  <!-- Main Container -->
   <div class="container-fluid">
     <div class="row">
-
-      <nav id="sidebar" class="px-0 bg-dark bg-gradient sidebar">
-        <%= render 'layouts/phcaccounts/components/nav_main' %>
-      </nav>
-      <div class="right-column">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-          <%= render 'layouts/phcaccounts/components/nav_top_bar' %>
-        </nav>
-        <main class="main-content p-5" role="main">
+      <div class="right-column sisu">
+        <div class="row mx-0">
           <%= yield %>
-        </main>
+        </div>
       </div>
-
     </div>
   </div>
+  <!-- Main Container -->
 
   <%= javascript_include_tag "phcaccounts/application" %>
 
