@@ -1,6 +1,6 @@
 ### PHCAccounts
 
-PHCAccounts(Pro) Rails 5.1 Authentication Engine  
+PHCAccounts(Pro) Rails Authentication Engine  
 
 - Using Devise for Authentication
 - Extra user information built in
