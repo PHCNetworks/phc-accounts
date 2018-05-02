@@ -20,5 +20,10 @@ module Phcaccounts
     helper Phctitleseo::Engine.helpers
     helper Phcnotifi::Engine.helpers
 
+    # Redirect User to Welcome Screen After Signin
+    def after_sign_in_path_for(resource)
+      phcaccounts.user_status_page_path
+    end
+
   end
 end
