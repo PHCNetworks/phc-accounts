@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div class="card">
+  <div class="card-header card-primary">
+    <h4>Update Contact Information</h4>
+  </div>
+  <div class="card-body">
+
+    <p>
+    <strong>Username:</strong>
+    <%= @admin_user.username %>
+    </p>
+
+    <p>
+    <strong>First Name:</strong>
+    <%= @admin_user.firstname %>
+    </p>
+
+    <p>
+    <strong>Last Name:</strong>
+    <%= @admin_user.lastname %>
+    </p>
+
+    <p>
+    <strong>OrgID:</strong>
+    <%= @admin_user.org_id %>
+    </p>
+
+    <%= link_to 'Back', admin_users_path %>
+
+  </div>
+</div>

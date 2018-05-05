@@ -9,7 +9,7 @@ module Phcaccounts
 
     protected
 
-    #
+    # Whitelist Additional Fields
     def phc_devise_permitted_parameters
       added_attrs = [:username, :firstname, :lastname, :email, :password, :password_confirmation, :remember_me]
       devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
@@ -23,6 +23,15 @@ module Phcaccounts
     # Redirect User to Welcome Screen After Signin
     def after_sign_in_path_for(resource)
       welcome_status_page_path
+    end
+
+    # Auth Filter for Admin
+    def phcaccounts_authentication_filter!
+      if admin_signed_in?
+        true
+      else
+        authenticate_user!
+      end
     end
 
   end
