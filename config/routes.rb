@@ -1,10 +1,10 @@
 Phcaccounts::Engine.routes.draw do
 
   # Dashboard (Engine Root)
-  get 'welcome_status_page', to: 'site/pages#welcome'
+  get 'welcome_status_page', to: 'modules/page#welcome'
 
   # Administrative Routes
-  get 'admin_users_all', to: 'admin/user#index'
+  get 'admin_users_all', to: 'modules/admin#index'
 
   # Persons Contact Information
   namespace :admin do
