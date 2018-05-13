@@ -5,17 +5,18 @@ module Phcaccounts
     require 'devise'
     require 'paper_trail'
 
-		# PHCEngines & Theme Dependencies
+    # PHCEngines & Theme Dependencies
     require 'phcnotifi'
     require 'phctitleseo'
 
-    require 'phcthemebasic'
     require 'phctheme1'
     require 'phctheme2'
+
     require 'phcadmin1'
     require 'phcadmin2'
     require 'phcadmin3'
     require 'phcadmin4'
+    require 'phcadmin5'
 
     # UI & Frontend Dependencies
     require 'country_select'
@@ -45,7 +46,7 @@ module Phcaccounts
     # Isolate Namespace
     isolate_namespace Phcaccounts
 
-		# Testing Generator
+    # Testing Generator
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
