@@ -1,9 +1,6 @@
-$:.push File.expand_path("../lib", __FILE__)
-
-# Gem Versioning
+$:.push File.expand_path("lib", __dir__)
 require "phcaccounts/version"
 
-# Gem Specification Information
 Gem::Specification.new do |phc_gem_spec|
 
   phc_gem_spec.name        = "phcaccounts"
@@ -12,7 +9,7 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.email       = ["info@phcnetworks.net"]
   phc_gem_spec.homepage    = "https://phcnetworks.net/"
   phc_gem_spec.summary     = "Rails 5.2 Engine - PHCAccounts"
-  phc_gem_spec.description = "PHCAccounts Rails devise based user accounts engine."
+  phc_gem_spec.description = "Rails devise based user accounts engine."
   phc_gem_spec.license     = "MIT"
 
   #Load Engine Files
