@@ -2,13 +2,18 @@
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
-Devise.setup do |config|
+Devise.setup do |phc_accounts_config|
+
+  # Configure for Engine Controller
+  phc_accounts_config.parent_controller = 'Phcaccountspro::ApplicationController'
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'ac11a037e498b28e08b73578448a1722b92291edb83f5f0fb8d7ee72f57b90556891e6878095a45c03b583aa7ca177f779626d6d318c4b38005d9e8a3593160b'
+  phc_accounts_config.secret_key = ENV['SECRET_KEY_BASE'] if Rails.env.production?
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -18,7 +23,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  phc_accounts_config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -52,12 +57,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:email]
+  phc_accounts_config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:email]
+  phc_accounts_config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -88,7 +93,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:http_auth]
+  phc_accounts_config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
@@ -111,7 +116,7 @@ Devise.setup do |config|
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 11
+  phc_accounts_config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = 'fcefbf7c22b728552d7cca03ad63702b93255e6b6f07eeb5c1fc6c8dc5cafaa853888604b759a1cd1794e877ac99a7088b450dc79a5f0990605f4a58b2ac2a9f'
@@ -142,7 +147,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  phc_accounts_config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -152,7 +157,7 @@ Devise.setup do |config|
   # config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
-  config.expire_all_remember_me_on_sign_out = true
+  phc_accounts_config.expire_all_remember_me_on_sign_out = true
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
@@ -163,12 +168,12 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  phc_accounts_config.password_length = 6..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  phc_accounts_config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -209,7 +214,7 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-  config.reset_password_within = 6.hours
+  phc_accounts_config.reset_password_within = 6.hours
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
@@ -229,15 +234,15 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  phc_accounts_config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
-  config.default_scope = :user
+  phc_accounts_config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
-  config.sign_out_all_scopes = false
+  phc_accounts_config.sign_out_all_scopes = false
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
@@ -251,7 +256,7 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
+  phc_accounts_config.sign_out_via = :delete
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
@@ -275,18 +280,18 @@ Devise.setup do |config|
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
-  config.router_name = :phcaccounts
+  phc_accounts_config.router_name = :phcaccountspro
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  Rails.application.config.to_prepare do
-    Devise::SessionsController.layout "phcaccounts/devise"
-    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "phcaccounts/application" : "phcaccounts/devise" }
-    Devise::ConfirmationsController.layout "phcaccounts/devise"
-    Devise::UnlocksController.layout "phcaccounts/devise"
-    Devise::PasswordsController.layout "phcaccounts/devise"
+  Rails.application.phc_accounts_config.to_prepare do
+    Devise::SessionsController.layout "phcaccountspro/devise"
+    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "phcaccountspro/application" : "phcaccountspro/devise" }
+    Devise::ConfirmationsController.layout "phcaccountspro/devise"
+    Devise::UnlocksController.layout "phcaccountspropro/devise"
+    Devise::PasswordsController.layout "phcaccountspropro/devise"
   end
 
 end

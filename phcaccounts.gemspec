@@ -9,7 +9,7 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.email       = ["info@phcnetworks.net"]
   phc_gem_spec.homepage    = "https://phcnetworks.net/"
   phc_gem_spec.summary     = "Rails 5.2 Engine - PHCAccounts"
-  phc_gem_spec.description = "Rails devise based user accounts engine."
+  phc_gem_spec.description = "Rails devise based user accounts and administration engine."
   phc_gem_spec.license     = "MIT"
 
   #Load Engine Files
