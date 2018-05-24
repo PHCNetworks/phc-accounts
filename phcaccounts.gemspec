@@ -49,7 +49,8 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.add_dependency 'rabl', '~> 0.13.1'
   phc_gem_spec.add_dependency 'responders', '~> 2.4'
 
-  # Database Dependencies
+  # Database & Paper Trail Dependencies
+  phc_gem_spec.add_dependency 'paper_trail', '~> 9.0'
   phc_gem_spec.add_dependency 'pg', '~> 0.21.0'
 
   # Security Dependencies
