@@ -21,10 +21,6 @@ module Phcaccounts
     # UI & Frontend Dependencies
     require 'country_select'
     require 'gravtastic'
-    require 'jquery-rails'
-    require 'jquery-ui-rails'
-    require 'sass-rails'
-    require 'webpacker'
 
     # API Dependencies
     require 'httparty'
@@ -35,9 +31,6 @@ module Phcaccounts
 
     # Clean URLS
     require 'friendly_id'
-
-    # WYSIWYG Editor Dependencies
-    require 'tinymce-rails'
 
     # Upload & Media Dependencies
     require 'carrierwave'
