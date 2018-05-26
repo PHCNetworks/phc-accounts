@@ -4,9 +4,6 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
-  # Configure for Engine Controller
-  config.parent_controller = 'Phcaccountspro::ApplicationController'
-
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -14,16 +11,17 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'ac11a037e498b28e08b73578448a1722b92291edb83f5f0fb8d7ee72f57b90556891e6878095a45c03b583aa7ca177f779626d6d318c4b38005d9e8a3593160b'
   config.secret_key = ENV['SECRET_KEY_BASE'] if Rails.env.production?
+  config.secret_key = '1848ae0b78b05269a99cfcd4205a4a75a549aa71e3d62281a6ae8cc4f95cf80cedce701674d84abdb45df600bd0b3870f1918413e72b83ec3eb103e5370d33b1' if Rails.env.development?
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  # config.parent_controller = 'DeviseController'
+  config.parent_controller = 'Phcaccounts::ApplicationController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'changeme@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -280,18 +278,18 @@ Devise.setup do |config|
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
-  config.router_name = :phcaccountspro
+  config.router_name = :Phcaccounts
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   Rails.application.config.to_prepare do
-    Devise::SessionsController.layout "phcaccountspro/devise"
-    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "phcaccountspro/application" : "phcaccountspro/devise" }
-    Devise::ConfirmationsController.layout "phcaccountspro/devise"
-    Devise::UnlocksController.layout "phcaccountspropro/devise"
-    Devise::PasswordsController.layout "phcaccountspropro/devise"
+    Devise::SessionsController.layout "phcaccounts/devise"
+    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "phcaccounts/application" : "phcaccounts/devise" }
+    Devise::ConfirmationsController.layout "phcaccounts/devise"
+    Devise::UnlocksController.layout "phcaccounts/devise"
+    Devise::PasswordsController.layout "phcaccounts/devise"
   end
 
 end
