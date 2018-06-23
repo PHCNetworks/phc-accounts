@@ -10,8 +10,6 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.homepage    = "https://phcnetworks.net/"
   phc_gem_spec.summary     = "Rails 5.2 Engine - PHCAccounts"
   phc_gem_spec.description = "Rails devise based user accounts and administration engine."
-  phc_gem_spec.license     = "MIT"
-
   #Load Engine Files
   phc_gem_spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
@@ -19,20 +17,20 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.add_dependency "rails", "~> 5.2", ">= 5.2.0"
 
   # Admin Panel Theme Dependencies
-  phc_gem_spec.add_dependency "phcadmin1", "~> 26.1"
-  phc_gem_spec.add_dependency "phcadmin2", "~> 26.1"
-  phc_gem_spec.add_dependency "phcadmin3", "~> 21.1"
-  phc_gem_spec.add_dependency "phcadmin4", "~> 3.1"
-  phc_gem_spec.add_dependency "phcadmin5", "~> 3.1"
+  phc_gem_spec.add_dependency "phcadmin1", "~> 26.2"
+  phc_gem_spec.add_dependency "phcadmin2", "~> 26.2"
+  phc_gem_spec.add_dependency "phcadmin3", "~> 21.2"
+  phc_gem_spec.add_dependency "phcadmin4", "~> 3.2"
+  phc_gem_spec.add_dependency "phcadmin5", "~> 3.2"
 
   # Website Theme Dependencies
-  phc_gem_spec.add_dependency "phctheme1", "~> 32.1"
-  phc_gem_spec.add_dependency "phctheme2", "~> 21.1"
-  phc_gem_spec.add_dependency "phctheme3", "~> 1.0"
+  phc_gem_spec.add_dependency "phctheme1", "~> 32.2"
+  phc_gem_spec.add_dependency "phctheme2", "~> 21.2"
+  phc_gem_spec.add_dependency "phctheme3", "~> 2.0"
 
   # PHC Helper Dependencies
-  phc_gem_spec.add_dependency "phcnotifi", "~> 23.1"
-  phc_gem_spec.add_dependency "phctitleseo", "~> 24.1"
+  phc_gem_spec.add_dependency "phcnotifi", "~> 23.2"
+  phc_gem_spec.add_dependency "phctitleseo", "~> 24.2"
 
   # UI & URL Frontend Dependencies
   phc_gem_spec.add_dependency "country_select", "~> 3.1"
