@@ -22,9 +22,11 @@ module Phcaccounts
     require 'gravtastic'
     require 'friendly_id'
 
-    # File Upload Service Dependencies
+    # File Upload & Service Dependencies
     require 'aws-sdk-s3'
+    require 'gmaps-autocomplete-rails'
     require 'google-cloud-storage'
+    require 'mini_magick'
 
     # Database & Paper Trail Dependencies
     require 'paper_trail'
