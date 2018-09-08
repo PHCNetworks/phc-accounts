@@ -1,17 +1,18 @@
 module Phcaccounts
   class Engine < ::Rails::Engine
 
-    # Admin Panel Theme Dependencies
+    # PHCTheme Dependencies
+    require 'phctheme1'
+    require 'phctheme2'
+    require 'phctheme3'
+    require 'phctheme3'
+    require 'phctheme3'
+
     require 'phcadmin1'
     require 'phcadmin2'
     require 'phcadmin3'
     require 'phcadmin4'
     require 'phcadmin5'
-
-    # Website Theme Dependencies
-    require 'phctheme1'
-    require 'phctheme2'
-    require 'phctheme3'
 
     # PHC Helper Dependencies
     require 'phcnotifi'
