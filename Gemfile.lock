@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcaccounts (19.0.0)
+    phcaccounts (20.0.0)
       aws-sdk-s3 (~> 1.21)
       country_select (~> 3.1)
       devise (~> 4.5)
