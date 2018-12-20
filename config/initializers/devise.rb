@@ -3,25 +3,24 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'ac11a037e498b28e08b73578448a1722b92291edb83f5f0fb8d7ee72f57b90556891e6878095a45c03b583aa7ca177f779626d6d318c4b38005d9e8a3593160b'
+  # config.secret_key = '730c9725eefa2ca59ef8e29972bfa50fae62ac5802cb7da0bd23b08ae82f06374ae34422d25b1bd454ffa6c1e929ded82b5d6550a98618e328cfac986dad16b4'
   config.secret_key = ENV['SECRET_KEY_BASE'] if Rails.env.production?
   config.secret_key = '1848ae0b78b05269a99cfcd4205a4a75a549aa71e3d62281a6ae8cc4f95cf80cedce701674d84abdb45df600bd0b3870f1918413e72b83ec3eb103e5370d33b1' if Rails.env.development?
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  config.parent_controller = 'Phcaccounts::ApplicationController'
+  config.parent_controller = 'phcaccounts::ApplicationController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'changeme@example.com'
+  config.mailer_sender = ENV['PHCACCOUNTS_EMAIL_SENDER']
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -117,7 +116,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'fcefbf7c22b728552d7cca03ad63702b93255e6b6f07eeb5c1fc6c8dc5cafaa853888604b759a1cd1794e877ac99a7088b450dc79a5f0990605f4a58b2ac2a9f'
+  config.pepper = ENV['SECRET_KEY_BASE']
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -152,7 +151,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
@@ -202,7 +201,7 @@ Devise.setup do |config|
   # config.unlock_in = 1.hour
 
   # Warn on the last attempt before the account is locked.
-  # config.last_attempt_warning = true
+  config.last_attempt_warning = true
 
   # ==> Configuration for :recoverable
   #
@@ -212,7 +211,7 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-  config.reset_password_within = 6.hours
+  config.reset_password_within = 3.hours
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
@@ -240,7 +239,7 @@ Devise.setup do |config|
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
-  config.sign_out_all_scopes = false
+  config.sign_out_all_scopes = true
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
@@ -278,11 +277,18 @@ Devise.setup do |config|
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
-  config.router_name = :Phcaccounts
+  config.router_name = :phcaccounts
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # ==> Turbolinks configuration
+  # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
+  #
+  # ActiveSupport.on_load(:devise_failure_app) do
+  #   include Turbolinks::Controller
+  # end
 
   Rails.application.config.to_prepare do
     Devise::SessionsController.layout "phcaccounts/devise"
