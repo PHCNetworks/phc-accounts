@@ -14,7 +14,7 @@ Devise.setup do |config|
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  config.parent_controller = 'phcaccounts::ApplicationController'
+  config.parent_controller = 'Phcaccounts::ApplicationController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
