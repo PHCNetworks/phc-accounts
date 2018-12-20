@@ -35,8 +35,8 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.add_dependency 'phctheme6', '~> 1.0'
   
   # PHC Helper Dependencies
-  phc_gem_spec.add_dependency 'phcnotifi', '~> 35.0'
-  phc_gem_spec.add_dependency 'phctitleseo', '~> 36.0'
+  phc_gem_spec.add_dependency 'phcnotifi', '~> 36.0'
+  phc_gem_spec.add_dependency 'phctitleseo', '~> 37.0'
   
   # UI & URL Frontend Dependencies
   phc_gem_spec.add_dependency 'country_select', '~> 3.1'
