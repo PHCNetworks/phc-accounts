@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcaccounts (26.0.0)
+    phcaccounts (27.0.0)
       activemerchant (~> 1.90)
       aws-sdk-s3 (~> 1.30)
       country_select (~> 4.0)
@@ -137,7 +137,7 @@ GEM
     database_cleaner (1.7.0)
     declarative (0.0.10)
     declarative-option (0.1.0)
-    devise (4.6.0)
+    devise (4.6.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
@@ -162,7 +162,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    google-api-client (0.28.3)
+    google-api-client (0.28.4)
       addressable (~> 2.5, >= 2.5.1)
       googleauth (>= 0.5, < 0.10.0)
       httpclient (>= 2.8.1, < 3.0)
@@ -580,7 +580,7 @@ DEPENDENCIES
   selenium-webdriver (~> 3.141)
   shoulda-matchers (~> 3.1)
   simplecov (~> 0.16.1)
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 1.3, >= 1.3.13)
 
 BUNDLED WITH
    1.17.3

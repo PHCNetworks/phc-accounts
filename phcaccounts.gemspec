@@ -73,7 +73,7 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.add_dependency 'activemerchant', '~> 1.90'
 
   # Development Dependencies
-  phc_gem_spec.add_development_dependency 'sqlite3', '~> 1.4'
+  phc_gem_spec.add_development_dependency 'sqlite3', '~> 1.3', '>= 1.3.13'
   phc_gem_spec.add_development_dependency 'byebug', '~> 10.0'
   phc_gem_spec.add_development_dependency 'capybara', '~> 3.13'
   phc_gem_spec.add_development_dependency 'minitest', '~> 5.11'
