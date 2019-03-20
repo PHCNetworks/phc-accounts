@@ -1,3 +1,3 @@
 module Phcaccounts
-  VERSION = '29.1.0'
+  VERSION = '30.0.0'
 end
