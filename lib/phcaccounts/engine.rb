@@ -21,7 +21,6 @@ module Phcaccounts
 		require 'phctitleseo'
 		
 		# UI & URL Frontend Dependencies
-		require 'country_select'
 		require 'gravtastic'
 		require 'friendly_id'
 		
