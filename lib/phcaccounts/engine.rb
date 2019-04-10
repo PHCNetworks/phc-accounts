@@ -19,6 +19,8 @@ module Phcaccounts
 		require 'phcadmin7'
 		
 		# PHC Helper Dependencies
+		require 'phccorehelpers'
+		require 'phcmenus'
 		require 'phcnotifi'
 		require 'phctitleseo'
 		
@@ -63,9 +65,11 @@ module Phcaccounts
 			g.fixture_replacement :factory_bot,
 				dir: "spec/factories"
 		end
-		
+	
 		# Load Requried Helper Files
 		config.to_prepare do
+			Phccorehelpers::ApplicationController.helper(ApplicationHelper)
+			Phcmenus::ApplicationController.helper(ApplicationHelper)
 			Phcnotifi::ApplicationController.helper(ApplicationHelper)
 			Phctitleseo::ApplicationController.helper(ApplicationHelper)
 		end

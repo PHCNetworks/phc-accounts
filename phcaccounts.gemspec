@@ -1,4 +1,4 @@
-$:.push File.expand_path("lib", __dir__)
+$:.push File.expand_path("../lib", __FILE__)
 require "phcaccounts/version"
 
 Gem::Specification.new do |phc_gem_spec|
@@ -35,8 +35,10 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.add_dependency 'phctheme5', '~> 15.0'
   phc_gem_spec.add_dependency 'phctheme6', '~> 8.0'
   phc_gem_spec.add_dependency 'phctheme7', '~> 2.0'
-
+  
   # PHC Helper Dependencies
+  phc_gem_spec.add_dependency 'phccorehelpers', '~> 2.0'
+  phc_gem_spec.add_dependency 'phcmenus', '~> 1.0' 
   phc_gem_spec.add_dependency 'phcnotifi', '~> 44.1'
   phc_gem_spec.add_dependency 'phctitleseo', '~> 45.1'
 
