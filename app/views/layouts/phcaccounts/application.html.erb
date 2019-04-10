@@ -2,39 +2,80 @@
 <html>
 <head>
 
-  <title>PHCAccounts System</title>
-  <%= stylesheet_link_tag "phcaccounts/application", media: "all" %>
+  <% phc_seo_title "PHCAccounts AMS" %>
+  <% phc_seo_description "Accounts Management System by PHCDevworks" %>
+
+  <!-- -PHC- SEO and Site Description -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= yield(:phc_seo_title) %></title>
+  <meta name="description" content="<%= yield(:phc_seo_description) %>">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <link rel="canonical" href="http://phcmembers.com">
+  <!-- -PHC- SEO and Site Description -->
+  
+  <!-- -PHC- Security -->
   <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <!-- -PHC- Security -->
+  
+  <!-- -PHC- CSS -->
+  <%= stylesheet_link_tag 'phcaccounts/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- -PHC- CSS -->
+
+  <!-- Font -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"/>
+  <!-- Font -->
 
 </head>
 <body>
 
-  <!-- Main Container -->
-  <div class="container-fluid">
-    <div class="row">
-
-      <!-- Main Container -->
-      <nav id="sidebar" class="px-0 bg-dark bg-gradient sidebar">
-        <%= render 'layouts/phcaccounts/components/nav_main' %>
-      </nav>
-      <!-- Main Container -->
-
-      <!-- Right Page Container -->
-      <div class="right-column">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-          <%= render 'layouts/phcaccounts/components/nav_top_bar' %>
-        </nav>
-        <main class="main-content p-5" role="main">
-          <%= yield %>
-        </main>
-      </div>
-      <!-- Right Page Container -->
-
+  <!-- Page Container -->
+  <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+    <!-- Page Header -->
+    <div id="header" class="header navbar-default">
+      <%= render 'layouts/phcaccounts/components/backend/navigation/top_menu' %>
     </div>
-  </div>
-  <!-- Main Container -->
+    <!-- Page Header -->
 
-  <%= javascript_include_tag "phcaccounts/application" %>
+    <!-- Page Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <%= render 'layouts/phcaccounts/components/backend/sidebars/side_menu' %>
+    </div>
+    <div class="sidebar-bg"></div>
+    <!-- Page Sidebar -->
+
+    <!-- Page Content -->
+    <div id="content" class="content">
+      <= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+      <%= yield %>
+    </div>
+    <!-- Page Content -->
+
+    <!-- Footer Content -->
+    <div id="footer" class="footer">
+      <%= render 'layouts/phcaccounts/components/backend/footer/footer' %>
+    </div>
+    <!-- Footer Content -->
+
+    <!-- Scroll to Top -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Scroll to Top -->
+
+  </div>
+  <!-- Page Container -->
+
+  <!-- Requried JavaScripts -->
+  <%= javascript_include_tag "phcaccounts/application", 'data-turbolinks-track': 'reload' %>
+  <script src="https://cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
+
+  <script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+  <!-- Requried JavaScripts -->
 
 </body>
 </html>

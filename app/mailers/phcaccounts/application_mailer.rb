@@ -1,6 +1,6 @@
 module Phcaccounts
   class ApplicationMailer < ActionMailer::Base
-    default from: 'from@example.com'
+    default from: 'info@phcnetworks.net'
     layout 'mailer'
   end
 end
