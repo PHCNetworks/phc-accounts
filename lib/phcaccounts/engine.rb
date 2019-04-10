@@ -8,6 +8,7 @@ module Phcaccounts
 		require 'phctheme4'
 		require 'phctheme5'
 		require 'phctheme6'
+		require 'phctheme7'
 		
 		require 'phcadmin1'
 		require 'phcadmin2'
@@ -15,6 +16,7 @@ module Phcaccounts
 		require 'phcadmin4'
 		require 'phcadmin5'
 		require 'phcadmin6'
+		require 'phcadmin7'
 		
 		# PHC Helper Dependencies
 		require 'phcnotifi'
