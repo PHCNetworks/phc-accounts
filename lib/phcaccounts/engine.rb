@@ -1,58 +1,59 @@
 module Phcaccounts
 	class Engine < ::Rails::Engine
-		
-		# PHCTheme Dependencies
-		require 'phctheme1'
-		require 'phctheme2'
-		require 'phctheme3'
-		require 'phctheme4'
-		require 'phctheme5'
-		require 'phctheme6'
-		require 'phctheme7'
-		
-		require 'phcadmin1'
-		require 'phcadmin2'
-		require 'phcadmin3'
-		require 'phcadmin4'
-		require 'phcadmin5'
-		require 'phcadmin6'
-		require 'phcadmin7'
-		
-		# PHC Helper Dependencies
+
+    # PHCTheme Dependencies
+    require 'phctheme1'
+    require 'phctheme2'
+    require 'phctheme3'
+    require 'phctheme4'
+    require 'phctheme5'
+    require 'phctheme6'
+    require 'phctheme7'
+
+    # PHCAdmin Dependencies
+    require 'phcadmin1'
+    require 'phcadmin2'
+    require 'phcadmin3'
+    require 'phcadmin4'
+    require 'phcadmin5'
+    require 'phcadmin6'
+    require 'phcadmin7'
+
+		# PHCHelper Dependencies
 		require 'phccorehelpers'
 		require 'phcmenus'
 		require 'phcnotifi'
 		require 'phctitleseo'
-		
-		# UI & URL Frontend Dependencies
+
+		# Frontend Dependencies
 		require 'gravtastic'
 		require 'friendly_id'
-		
-		# File Upload & Service Dependencies
-		require 'aws-sdk-s3'
-		require 'google-cloud-storage'
-		require 'mini_magick'
-		
-		# Database & Paper Trail Dependencies
+
+    # Upload Dependencies
+    require 'aws-sdk-s3'
+    require 'google-cloud-storage'
+    require 'mini_magick'
+
+		# Database Dependencies
 		require 'paper_trail'
 		require 'pg'
-		
+
 		# Security Dependencies
 		require 'devise'
 		require 'simple_token_authentication'
-		
-		# Omniauth Authtication
+
+		# Omniauth Dependencies
 		require 'omniauth-facebook'
 		require 'omniauth-github'
 		require 'omniauth-instagram'
 		require 'omniauth-twitter'
-		
-		# Payments & Payment Gateways
+
+		# Payment Dependencies
 		require 'activemerchant'
-		
+
 		# Isolate Namespace
-		isolate_namespace Phcaccounts
-		
+    isolate_namespace Phcaccounts
+
 		# Testing Generator
 		config.generators do |g|
 			g.test_framework :rspec,
@@ -65,7 +66,7 @@ module Phcaccounts
 			g.fixture_replacement :factory_bot,
 				dir: "spec/factories"
 		end
-	
+
 		# Load Requried Helper Files
 		config.to_prepare do
 			Phccorehelpers::ApplicationController.helper(ApplicationHelper)
@@ -73,6 +74,6 @@ module Phcaccounts
 			Phcnotifi::ApplicationController.helper(ApplicationHelper)
 			Phctitleseo::ApplicationController.helper(ApplicationHelper)
 		end
-	
+
 	end
 end
