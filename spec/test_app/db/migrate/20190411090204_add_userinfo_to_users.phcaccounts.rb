@@ -1,3 +1,4 @@
+# This migration comes from phcaccounts (originally 20171022205220)
 class AddUserinfoToUsers < ActiveRecord::Migration[5.2]
   def change
 
