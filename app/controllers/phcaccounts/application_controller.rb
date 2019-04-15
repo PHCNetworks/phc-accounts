@@ -2,7 +2,7 @@ module Phcaccounts
     class ApplicationController < ActionController::Base
 
         # Devise Filter
-        before_action :phc_accounts_pro_permitted_parameters, if: :devise_controller?
+        before_action :phc_accounts_permitted_parameters, if: :devise_controller?
 
         # Security Filters
         protect_from_forgery with: :exception
@@ -16,7 +16,7 @@ module Phcaccounts
         private
 
         # Whitelist Additional Fields
-        def phc_accounts_pro_permitted_parameters
+        def phc_accounts_permitted_parameters
           added_attrs = [:username, :firstname, :lastname, :email, :password, :password_confirmation, :remember_me]
           devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
           devise_parameter_sanitizer.permit :account_update, keys: added_attrs

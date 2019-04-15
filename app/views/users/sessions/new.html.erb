@@ -6,7 +6,7 @@
 
     <!-- Ad/News Feed Area -->
     <div class="news-feed">
-      <div class="news-image" style="background-image: url(https://static.phcnetworks.net/phc_engines/phc_accounts/tropical_house_beach.jpg)"></div>
+      <div class="news-image" style="background-image: url(https://static.phcnetworks.net/phc_engines/phc_accounts_pro/tropical_house_beach.jpg)"></div>
       <div class="news-caption">
         <h4 class="caption-title"><strong>PHC</strong>ACCOUNTS</h4>
         <p>Rails5 User Accounts Engine</p>
@@ -26,22 +26,22 @@
       <!-- Registration Form Header -->
       <!-- Registration Form Content -->
       <div class="login-content">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |phc_accounts_sign_in| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |phc_accounts_pro_sign_in| %>
           <%= devise_error_messages! %>
           <div class="form-group m-b-15">
-            <%= phc_accounts_sign_in.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control form-control-lg" %>
+            <%= phc_accounts_pro_sign_in.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control form-control-lg" %>
           </div>
           <div class="form-group m-b-15">
-            <%= phc_accounts_sign_in.password_field :password, autocomplete: "off", placeholder: "Your Password", class: "form-control form-control-lg" %>
+            <%= phc_accounts_pro_sign_in.password_field :password, autocomplete: "off", placeholder: "Your Password", class: "form-control form-control-lg" %>
           </div>
           <div class="checkbox checkbox-css m-b-30">
             <% if devise_mapping.rememberable? -%>
-              <%= phc_accounts_sign_in.check_box :remember_me, class: "custom-control-input" %>
-              <%= phc_accounts_sign_in.label :remember_me, class: "custom-control-label" %>
+              <%= phc_accounts_pro_sign_in.check_box :remember_me, class: "custom-control-input" %>
+              <%= phc_accounts_pro_sign_in.label :remember_me, class: "custom-control-label" %>
             <% end -%>
           </div>
           <div class="login-buttons">
-            <%= phc_accounts_sign_in.button :submit, class: "btn btn-success btn-block btn-lg"  do %>
+            <%= phc_accounts_pro_sign_in.button :submit, class: "btn btn-success btn-block btn-lg"  do %>
               <i class="batch-icon batch-icon-key"></i>
               Sign-In
             <% end %>
@@ -52,7 +52,7 @@
         <% end %>
         <hr />
         <p class="text-center text-grey-darker">
-          &copy; <strong>PHC</strong>Accounts(Pro) All Right Reserved 2018
+          &copy; <strong>PHC</strong>Accounts All Right Reserved 2018-2019
         </p>
       </div>
       <!-- Registration Form Content -->

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcaccounts (35.0.0)
+    phcaccounts (36.0.0)
       activemerchant (~> 1.92)
       aws-sdk-s3 (~> 1.36)
       devise (~> 4.6)

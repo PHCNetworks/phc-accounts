@@ -4,7 +4,7 @@ module Phcaccounts
   class Accounts::DashboardController < ApplicationController
 
     # Security & Custom Layout Filters
-    before_action :phcaccounts_pro_authentication_filter!
+    before_action :phcaccounts_authentication_filter!
 
     # Index Dashboard
     def index
