@@ -1,4 +1,4 @@
 //= link_tree ../images
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
-//= link phcaccounts_manifest.js
+//= link phcmembers_manifest.js

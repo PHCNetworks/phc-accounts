@@ -1,23 +1,23 @@
 module Phcaccounts
 	class Engine < ::Rails::Engine
 
-    # PHCTheme Dependencies
-    require 'phctheme1'
-    require 'phctheme2'
-    require 'phctheme3'
-    require 'phctheme4'
-    require 'phctheme5'
-    require 'phctheme6'
-    require 'phctheme7'
+		# PHCTheme Dependencies
+		require 'phctheme1'
+		require 'phctheme2'
+		require 'phctheme3'
+		require 'phctheme4'
+		require 'phctheme5'
+		require 'phctheme6'
+		require 'phctheme7'
 
-    # PHCAdmin Dependencies
-    require 'phcadmin1'
-    require 'phcadmin2'
-    require 'phcadmin3'
-    require 'phcadmin4'
-    require 'phcadmin5'
-    require 'phcadmin6'
-    require 'phcadmin7'
+		# PHCAdmin Dependencies
+		require 'phcadmin1'
+		require 'phcadmin2'
+		require 'phcadmin3'
+		require 'phcadmin4'
+		require 'phcadmin5'
+		require 'phcadmin6'
+		require 'phcadmin7'
 
 		# PHCHelper Dependencies
 		require 'phccorehelpers'
@@ -29,10 +29,10 @@ module Phcaccounts
 		require 'gravtastic'
 		require 'friendly_id'
 
-    # Upload Dependencies
-    require 'aws-sdk-s3'
-    require 'google-cloud-storage'
-    require 'mini_magick'
+		# Upload Dependencies
+		require 'aws-sdk-s3'
+		require 'google-cloud-storage'
+		require 'mini_magick'
 
 		# Database Dependencies
 		require 'paper_trail'
@@ -52,7 +52,7 @@ module Phcaccounts
 		require 'activemerchant'
 
 		# Isolate Namespace
-    isolate_namespace Phcaccounts
+		isolate_namespace Phcaccounts
 
 		# Testing Generator
 		config.generators do |g|
@@ -74,6 +74,6 @@ module Phcaccounts
 			Phcnotifi::ApplicationController.helper(ApplicationHelper)
 			Phctitleseo::ApplicationController.helper(ApplicationHelper)
 		end
-
+	
 	end
 end

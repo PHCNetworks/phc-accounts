@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  mount Phcaccounts::Engine => "/"
+
+    # Index Route
+    root :to => 'website/pages#index'
+
+    # Engine Routes
+    mount Phcaccounts::Engine => "/"
+
 end
