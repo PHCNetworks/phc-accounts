@@ -57,10 +57,10 @@
               <%= sign_up.password_field :password, autocomplete: "off", placeholder: "Confirm your Password", class: "form-control" %>
             </div>
           </div>
-          <div class="checkbox checkbox-css m-b-30">
-            <div class="checkbox checkbox-css m-b-30">
-              <input type="checkbox" id="agreement_checkbox" value="">
-              <label for="agreement_checkbox">
+          <div class="checkbox-css m-b-30">
+            <div class="form-check checkbox-css m-b-30">
+              <%= sign_up.check_box :terms_of_service, required: true, class: "form-check-input", id: "agreement_checkbox" %>
+              <label class="form-check-label">
                 By clicking Sign Up, you agree to our <a href="javascript:;">Terms</a> and that you have read our <a href="javascript:;">Data Policy</a>, including our <a href="javascript:;">Cookie Use</a>.
               </label>
             </div>
