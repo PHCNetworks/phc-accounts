@@ -1,30 +1,65 @@
-<div class="row mx-auto p-5">
-  <div class="col">
+<!-- Title System -->
+<% phc_title "Send Password Reset Link" %>
+<% phc_title_tagline "Password Reset Form" %>
+<% phc_breadcrumb_one link_to "Home", main_app.root_path %>
+<% phc_breadcrumb_two yield(:phc_title_tagline) %>
+<!-- Title System -->
 
-    <div class="card ">
-      <div class="card-header card-primary">
-        <h4>Forgot Your Password</h4>
+<!-- BreakCrumbs & Header -->
+<ol class="breadcrumb pull-right">
+  <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+  <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+</ol>
+<h2 class="page-header"><%= yield(:phc_title) %></h2>
+<!-- BreakCrumbs & Header -->
+
+<!-- Page Content -->
+<div class="row">
+  <div class="col-lg-12">
+
+    <!-- Panel -->
+    <div class="panel panel-inverse">
+
+      <!-- Panel - Heading -->
+      <div class="panel-heading">
+        <!-- Panel - Actions -->
+        <div class="panel-heading-btn">
+          <a href="#" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+          <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+          <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+        </div>
+        <!-- Panel - Actions -->
+        <h4 class="panel-title"><%= yield(:phc_title) %></h4>
       </div>
-      <div class="card-body">
+      <!-- Panel - Heading -->
 
-        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <!-- Panel - Body -->
+      <div class="panel-body">
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |form| %>
+
           <%= devise_error_messages! %>
 
           <div class="form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= form.label :email %>
+            <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
           </div>
 
           <div class="actions">
-          <%= f.submit "Send me reset password instructions" %>
+            <%= form.button class: "btn btn-success" do %>
+              <i class="far fa-paper-plane"></i>
+              Send Password Reset Instructions
+            <% end %>
           </div>
 
         <% end %>
 
-        <%= render "devise/shared/links" %>
-
       </div>
+      <!-- Panel - Body -->
+
     </div>
+    <!-- Panel -->
 
   </div>
 </div>
+<!-- Page Content -->

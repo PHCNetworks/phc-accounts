@@ -1,38 +1,73 @@
-<div class="col">
+<!-- Title System -->
+<% phc_title resource_name.to_s.humanize + " Edit Password" %>
+<% phc_title_tagline "Edit Your " + resource_name.to_s.humanize + " Edit Password" %>
+<% phc_breadcrumb_one link_to resource_name.to_s.humanize + " Accounts Home", phcaccounts.welcome_status_page_path %>
+<% phc_breadcrumb_two yield(:phc_title_tagline) %>
+<!-- Title System -->
 
-  <div class="card ">
-    <div class="card-header card-primary">
-      <h4>Change Your Password</h4>
-    </div>
-    <div class="card-body">
+<!-- BreakCrumbs & Header -->
+<ol class="breadcrumb pull-right">
+  <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+  <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+</ol>
+<h2 class="page-header"><%= yield(:phc_title) %></h2>
+<!-- BreakCrumbs & Header -->
 
-      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
-        <%= f.hidden_field :reset_password_token %>
+<!-- Page Content -->
+<div class="row">
+  <div class="col-lg-12">
 
-        <div class="form-group">
-        <%= f.label :password, "New password" %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <!-- Panel -->
+    <div class="panel panel-inverse">
+
+      <!-- Panel - Heading -->
+      <div class="panel-heading">
+        <!-- Panel - Actions -->
+        <div class="panel-heading-btn">
+          <a href="#" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+          <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+          <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+        </div>
+        <!-- Panel - Actions -->
+        <h4 class="panel-title"><%= yield(:phc_title) %></h4>
+      </div>
+      <!-- Panel - Heading -->
+
+      <!-- Panel - Body -->
+      <div class="panel-body">
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |form| %>
+
+          <%= devise_error_messages! %>
+          <%= form.hidden_field :reset_password_token %>
+
+          <div class="form-group">
+            <%= form.label :password, "New password" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+            <%= form.password_field :password, autofocus: true, autocomplete: "off" %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :password_confirmation, "Confirm new password" %>
+            <%= form.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Change my password" %>
+          </div>
+
         <% end %>
-        <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-        </div>
 
-        <div class="form-group">
-        <%= f.label :password_confirmation, "Confirm new password" %>
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-
-        <div class="actions">
-        <%= f.submit "Change my password" %>
-        </div>
-
-      <% end %>
-
-      <%= render "devise/shared/links" %>
+        <%= render "devise/shared/links" %>
 
       </div>
+      <!-- Panel - Body -->
+
     </div>
+    <!-- Panel -->
 
   </div>
 </div>
+<!-- Page Content -->

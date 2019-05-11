@@ -6,6 +6,7 @@ module Phcaccounts
     # Security & Custom Layout Filters
     before_action :phcaccounts_authentication_filter!
 
+    # Administrator Index
     def index
       @admin_users = Phcaccounts::User.all
     end

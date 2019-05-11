@@ -1,6 +1,8 @@
 class DeviseCreatePhcaccountsUsers < ActiveRecord::Migration[5.2]
   def change
+
     create_table :phcaccounts_users do |t|
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -29,14 +31,14 @@ class DeviseCreatePhcaccountsUsers < ActiveRecord::Migration[5.2]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
-
       t.timestamps null: false
+
     end
 
     add_index :phcaccounts_users, :email,                unique: true
     add_index :phcaccounts_users, :reset_password_token, unique: true
     # add_index :phcaccounts_users, :confirmation_token,   unique: true
     # add_index :phcaccounts_users, :unlock_token,         unique: true
+
   end
 end

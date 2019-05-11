@@ -1,12 +1,12 @@
 Phcaccounts::Engine.routes.draw do
 
-    # Dashboard (Engine Root)
-    get 'welcome_status_page', to: 'accounts/dashboard#welcome'
+  # Dashboard (Engine Root)
+  get 'welcome_status_page', to: 'accounts/dashboard#index'
 
-    # Administrative Routes
-    get 'admin_users_all', to: 'admin/accounts#index'
+  # Administrative Routes
+  get 'admin_users_all', to: 'admin/accounts#index'
 
-    # Add Devise routes
-    devise_for :users, class_name: "Phcaccounts::User", module: :devise
- 
+  # Add Devise routes
+  devise_for :users, class_name: "Phcaccounts::User", module: :devise
+
 end

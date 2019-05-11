@@ -10,9 +10,5 @@ module Phcaccounts
     def index
     end
 
-    # Welcome After Login
-    def welcome
-    end
-
   end
 end
