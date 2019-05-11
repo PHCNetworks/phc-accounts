@@ -36,7 +36,24 @@
   <!-- Sidebar - User Profile Menu -->
   <!-- Sidebar - Sidebar Navigation -->
   <ul class="nav">
-    
+
+    <% if defined?phccodesnipper %>
+      <!-- Sidebar - Sidebar Navigation - PHCPress(Pro) -->
+      <li class="nav-header">Code Snippets</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-newspaper"></i>
+          <span>Code Snippets</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phccodesnipper/script/posts') %>"><%= link_to 'Snippet Index', phccodesnipper.script_snippets_path %></li>
+          <li class="<%= phc_menus_active_controller('phccodesnipper/script/posts#new') %>"><%= link_to 'New Snippet', phccodesnipper.new_script_snippet_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCPress(Pro) -->
+    <% end %>
+
     <% if defined?phcpress %>
       <!-- Sidebar - Sidebar Navigation - PHCPress(Pro) -->
       <li class="nav-header">Article Management</li>
@@ -138,6 +155,7 @@
         </ul>
       </li>
       <!-- Sidebar - Sidebar Navigation - PHCAccounts -->
+
       <!-- Sidebar - Sidebar Minifier -->
       <li>
         <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify">
