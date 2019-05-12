@@ -141,29 +141,46 @@
       <!-- Sidebar - Sidebar Navigation - PHCScriptCDN -->
     <% end %>
 
+    <% if current_user && current_user.admin? %>
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
+      <li class="nav-header">User Administration</li>
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <i class="fas fa-user"></i>
+            <span>Admin</span>
+          </a>
+          <ul class="sub-menu">
+            <li class="<%= phc_menus_active_controller('phcaccounts/admin/users') %>"><%= link_to 'User List', phcaccounts.admin_users_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
+    <% end %>
+
     <% if current_user %>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts Options -->
-      <li class="nav-header">Account Settings</li>
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
+      <li class="nav-header">Your Account</li>
       <li class="has-sub">
         <a href="javascript:;">
           <b class="caret"></b>
           <i class="fas fa-user"></i>
-          <span>Accounts Dashboard</span>
+          <span>Accounts Settings</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= phc_menus_active_controller('phcaccounts/admin/edit') %>"><%= link_to('Settings', phcaccounts.edit_user_registration_path) %></li>
-          <li class="<%= phc_menus_active_controller('phcaccounts/admin/new') %>"><%= link_to('Logout', phcaccounts.destroy_user_session_path, method: :delete) %></li>
+          <li class="<%= phc_menus_active_controller('phcaccounts/user/edit') %>"><%= link_to 'Settings', phcaccounts.edit_user_registration_path %></li>
+          <li class="<%= phc_menus_active_controller('phcaccounts/user/new') %>"><%= link_to 'Logout', phcaccounts.destroy_user_session_path, method: :delete %></li>
         </ul>
       </li>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts Options -->
-      <!-- Sidebar - Sidebar Minifier -->
-      <li>
-        <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify">
-          <i class="fa fa-angle-double-left"></i>
-        </a>
-      </li>
-      <!-- Sidebar - Sidebar Minifier -->
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
     <% end %>
+    
+    <!-- Sidebar - Sidebar Minifier -->
+    <li>
+      <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify">
+        <i class="fa fa-angle-double-left"></i>
+      </a>
+    </li>
+    <!-- Sidebar - Sidebar Minifier -->
 
   </ul>
   <!-- Sidebar - Sidebar Navigation -->

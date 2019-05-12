@@ -1,0 +1,37 @@
+<!-- Title System -->
+<% phc_title "Uaser Manager" %>
+<% phc_title_tagline "Edit User" %>
+<% phc_breadcrumb_one link_to "Home", main_app.root_path %>
+<% phc_breadcrumb_two link_to "User List", phcaccounts.admin_users_path %>
+<% phc_breadcrumb_three yield(:phc_title_tagline) %>
+<!-- Title System -->
+
+<!-- Page Bradcrumbs -->
+<ol class="breadcrumb pull-right">
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_two) %></li>
+	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_three) %></li>
+</ol>
+<!-- Page Bradcrumbs -->
+
+<!-- Page Header -->
+<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<!-- Page Header -->
+			
+<!-- Page Content -->
+<div class="panel panel-inverse">
+	<div class="panel-heading">
+		<div class="panel-heading-btn">
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+		</div>
+		<h4 class="panel-title"><%= yield(:phc_title) %></h4>
+	</div>
+	<div class="panel-body">
+		<!-- Form for Member Listing Update -->
+		<%= render 'form', { form_url: admin_user_path } %>
+		<!-- Form for Member Listing Update -->
+	</div>
+</div>
+<!-- Page Content -->

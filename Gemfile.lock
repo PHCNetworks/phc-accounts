@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcaccounts (38.0.0)
+    phcaccounts (38.2.0)
       activemerchant (~> 1.93)
       aws-sdk-s3 (~> 1.36)
       devise (~> 4.6)
@@ -25,9 +25,9 @@ PATH
       phcadmin5 (~> 25.0)
       phcadmin6 (~> 14.0)
       phcadmin7 (~> 8.0)
-      phccorehelpers (~> 4.0)
+      phccorehelpers (~> 5.0)
       phcmenus (~> 3.0)
-      phcnotifi (~> 45.0)
+      phcnotifi (~> 47.2)
       phctheme1 (~> 54.0)
       phctheme2 (~> 43.0)
       phctheme3 (~> 23.0)
@@ -112,7 +112,7 @@ GEM
     bcrypt (3.1.12)
     builder (3.2.3)
     byebug (11.0.1)
-    capybara (3.19.0)
+    capybara (3.19.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -342,7 +342,7 @@ GEM
       turbolinks (~> 5.2)
       uglifier (~> 4.1)
       webpacker (~> 4.0)
-    phccorehelpers (4.0.0)
+    phccorehelpers (5.0.0)
       phcadmin1 (~> 49.0)
       phcadmin2 (~> 51.0)
       phcadmin3 (~> 44.0)
@@ -374,7 +374,7 @@ GEM
       phctheme6 (~> 9.0)
       phctheme7 (~> 3.0)
       rails (~> 5.2, >= 5.2.3)
-    phcnotifi (45.0.0)
+    phcnotifi (47.2.0)
       phcadmin1 (~> 49.0)
       phcadmin2 (~> 51.0)
       phcadmin3 (~> 44.0)

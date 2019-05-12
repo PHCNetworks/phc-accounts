@@ -294,9 +294,9 @@ Devise.setup do |config|
   Rails.application.config.to_prepare do
     Devise::SessionsController.layout "phcaccounts/devise"
     Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "phcaccounts/application" : "phcaccounts/devise" }
-    Devise::ConfirmationsController.layout "phcaccounts/devise"
-    Devise::UnlocksController.layout "phcaccounts/devise"
-    Devise::PasswordsController.layout "phcaccounts/devise"
+    Devise::ConfirmationsController.layout "phcaccounts/application_no_sidebar"
+    Devise::UnlocksController.layout "phcaccounts/application_no_sidebar"
+    Devise::PasswordsController.layout "phcaccounts/application_no_sidebar"
   end
 
 end
