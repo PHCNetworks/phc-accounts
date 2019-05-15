@@ -8,8 +8,8 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.authors     = ["BradPotts"]
   phc_gem_spec.email       = ["info@phcnet.co"]
   phc_gem_spec.homepage    = "https://phcdevworks.com/"
-  phc_gem_spec.summary     = "Rails Accounts Engine"
-  phc_gem_spec.description = "Rails Authentication and User Management Engine."
+  phc_gem_spec.summary     = "Rails 5.2 Accounts Engine"
+  phc_gem_spec.description = "Rails 5.2 Authentication and User Management Engine."
   phc_gem_spec.license     = "MIT"
 
   #Load Engine Files

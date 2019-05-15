@@ -1,5 +1,5 @@
 <!-- Title System -->
-<% phc_title "Uaser Manager" %>
+<% phc_title "User Manager" %>
 <% phc_title_tagline "User List" %>
 <% phc_breadcrumb_one link_to "Home", main_app.root_path %>
 <% phc_breadcrumb_two link_to "Accounts Info", phcaccounts.welcome_status_page_path %>
@@ -33,26 +33,26 @@
 		<!-- Table - User Index -->
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>User ID</th>
-            <th>Username</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @admin_users.each do |phc_accounts_admin_user_index| %>
-            <tr>
-              <td><%= phc_accounts_admin_user_index.id %></td>
-              <td><%= phc_accounts_admin_user_index.username %></td>
-              <td><%= phc_accounts_admin_user_index.firstname %></td>
-              <td><%= phc_accounts_admin_user_index.lastname %></td>
-              <td><%= phc_accounts_admin_user_index.email %></td>
-            </tr>
-          <% end %>
-        </tbody>
+				<thead>
+					<tr>
+						<th>User ID</th>
+						<th>Username</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @admin_users.each do |phc_accounts_admin_user_index| %>
+						<tr>
+							<td><%= phc_accounts_admin_user_index.id %></td>
+							<td><%= phc_accounts_admin_user_index.username %></td>
+							<td><%= phc_accounts_admin_user_index.firstname %></td>
+							<td><%= phc_accounts_admin_user_index.lastname %></td>
+							<td><%= phc_accounts_admin_user_index.email %></td>
+						</tr>
+					<% end %>
+				</tbody>
 			</table>
 		</div>
 		<!-- Table - User Index -->

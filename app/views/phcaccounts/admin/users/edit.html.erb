@@ -1,5 +1,5 @@
 <!-- Title System -->
-<% phc_title "Uaser Manager" %>
+<% phc_title "User Manager" %>
 <% phc_title_tagline "Edit User" %>
 <% phc_breadcrumb_one link_to "Home", main_app.root_path %>
 <% phc_breadcrumb_two link_to "User List", phcaccounts.admin_users_path %>
@@ -17,7 +17,7 @@
 <!-- Page Header -->
 <h1 class="page-header"><%= yield(:phc_title) %></h1>
 <!-- Page Header -->
-			
+
 <!-- Page Content -->
 <div class="panel panel-inverse">
 	<div class="panel-heading">
@@ -29,9 +29,11 @@
 		<h4 class="panel-title"><%= yield(:phc_title) %></h4>
 	</div>
 	<div class="panel-body">
-		<!-- Form for Member Listing Update -->
+
+		<!-- Form for User Update -->
 		<%= render 'form', { form_url: admin_user_path } %>
-		<!-- Form for Member Listing Update -->
+		<!-- Form for User Update -->
+
 	</div>
 </div>
 <!-- Page Content -->
