@@ -42,12 +42,6 @@ module Phcaccounts
 		require 'devise'
 		require 'simple_token_authentication'
 
-		# Omniauth Dependencies
-		require 'omniauth-facebook'
-		require 'omniauth-github'
-		require 'omniauth-instagram'
-		require 'omniauth-twitter'
-
 		# Payment Dependencies
 		require 'activemerchant'
 
