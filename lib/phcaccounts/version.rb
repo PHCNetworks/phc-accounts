@@ -1,3 +1,3 @@
 module Phcaccounts
-    VERSION = '42.3.0'
+    VERSION = '42.4.0'
 end
